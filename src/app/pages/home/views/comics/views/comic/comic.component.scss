@@ -1,0 +1,133 @@
+@import '../../../../../../../styles/variables';
+
+.comic-title {
+  text-align: center;
+}
+
+.comic-content {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.comic-cover {
+  min-width: 30%;
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 414px) {
+  .comic-cover {
+    min-width: 100%;
+    margin-right: 0;
+  }
+  .comic-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.comic-description {
+  text-indent: 3rem;
+  line-height: 1.5;
+}
+
+.comic-details {
+  margin-top: 3rem;
+}
+
+.block {
+  margin-bottom: 2.5rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.block__header {
+  text-decoration: underline;
+}
+
+.block__content {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero__link {
+  margin-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 30%;
+
+  &:hover {
+    color: $c_bright_red;
+  }
+
+  &:focus {
+    color: $c_bright_red;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hero__link {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero__link {
+    width: 100%;
+  }
+}
+
+.favourite {
+  position: relative;
+
+  &:hover {
+    &:after {
+      bottom: 0;
+      transform: translate(-50%, 110%);
+      left: 50%;
+      position: absolute;
+      font-size: 1.2rem;
+      padding: .6rem 1rem;
+      color: $c-light_gray;
+      background-color: rgba(0, 0, 0, .8);
+      border: 1px solid $c-dark_red;
+    }
+  }
+}
+
+.favourited {
+  color: $c-bright_red;
+
+  &:hover {
+    &:after {
+      content: 'remove favourite';
+    }
+  }
+}
+
+.unfavourited {
+  color: $c-white;
+
+  &:hover {
+    &:after {
+      content: 'add favourite';
+    }
+  }
+}
+
+.creator {
+  margin-right: 2rem;
+  border-bottom: 1px solid $c-bright_red;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

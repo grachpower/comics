@@ -1,0 +1,41 @@
+<h3 class="title">Favourites comics</h3>
+<ul class="list">
+    <ng-container *ngIf="comics; else empty">
+        <li class="list__item about__link" *ngFor="let comic of comics" (click)="selectComic(comic)">
+            <div class="preview">
+                <picture class="comic__picture" *ngIf="comic?.thumbnail">
+                    <source [srcset]="comic?.thumbnail?.path + '/portrait_uncanny.' + comic?.thumbnail?.extension" media="(min-width: 768px)">
+                    <source [srcset]="comic?.thumbnail?.path + '/portrait_xlarge.' + comic?.thumbnail?.extension" media="(min-width: 425px)">
+                    <source [srcset]="comic?.thumbnail?.path + '/portrait_medium.' + comic?.thumbnail?.extension" media="(min-width: 100px)">
+                    <img class="image" [src]="comic?.thumbnail?.path + '.' + comic?.thumbnail?.extension" [alt]="comic?.title">
+                </picture>
+            </div>
+            <p class="about">
+                <span>{{comic?.title}}</span>
+            </p>
+        </li>
+    </ng-container>
+</ul>
+
+<h3 class="title">Favourite heroes</h3>
+<ul class="list">
+    <ng-container *ngIf="comics; else empty">
+        <li class="list__item about__link" *ngFor="let hero of heroes" (click)="selectHero(hero)">
+            <div class="preview">
+                <picture class="hero__picture" *ngIf="hero?.thumbnail">
+                    <source [srcset]="hero?.thumbnail?.path + '/standard_fantastic.' + hero?.thumbnail?.extension" media="(min-width: 768px)">
+                    <source [srcset]="hero?.thumbnail?.path + '/standard_xlarge.' + hero?.thumbnail?.extension" media="(min-width: 425px)">
+                    <source [srcset]="hero?.thumbnail?.path + '/standard_medium.' + hero?.thumbnail?.extension" media="(min-width: 100px)">
+                    <img class="image" [src]="hero?.thumbnail?.path + '.' + hero?.thumbnail?.extension" [alt]="hero?.name">
+                </picture>
+            </div>
+            <p class="about">
+                <span>{{hero?.name}}</span>
+            </p>
+        </li>
+    </ng-container>
+</ul>
+
+<ng-template #empty>
+    <span>Sorry, add favourite first!</span>
+</ng-template>

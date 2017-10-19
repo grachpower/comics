@@ -1,0 +1,52 @@
+<h3 class="comic-title">
+    {{comic?.title}}
+    <i class="icon icon_fire favourite" (click)="toggleFavourite()" [ngClass]="isFavourite ? 'favourited' : 'unfavourited'"></i>
+</h3>
+<div class="comic-content">
+    <div class="comic-cover">
+        <picture class="comic__picture" *ngIf="comic?.thumbnail">
+            <source [srcset]="comic?.thumbnail?.path + '/portrait_uncanny.' + comic?.thumbnail?.extension" media="(min-width: 768px)">
+            <source [srcset]="comic?.thumbnail?.path + '/portrait_xlarge.' + comic?.thumbnail?.extension" media="(min-width: 425px)">
+            <img class="image" [src]="comic?.thumbnail?.path + '.' + comic?.thumbnail?.extension" [alt]="comic?.title">
+        </picture>
+    </div>
+    <ng-container *ngIf="comic?.description; else empty">
+        <p class="comic-description">{{comic?.description}}</p>
+    </ng-container>
+</div>
+<div class="comic-details">
+    <div class="block">
+        <header class="block__header">
+            <h4>Characters</h4>
+        </header>
+        <div class="block__content">
+            <ng-container *ngIf="heroes?.length !== 0; else empty">
+                <a class="hero__link" *ngFor="let hero of heroes" (click)="selectHero(hero)">
+                    <picture class="hero__picture" *ngIf="hero?.thumbnail">
+                        <source [srcset]="hero?.thumbnail?.path + '/portrait_medium.' + hero?.thumbnail?.extension" media="(min-width: 768px)">
+                        <source [srcset]="hero?.thumbnail?.path + '/portrait_medium.' + hero?.thumbnail?.extension" media="(min-width: 100px)">
+                        <img class="image" [src]="hero?.thumbnail?.path + '.' + hero?.thumbnail?.extension" [alt]="hero?.name">
+                    </picture>
+                    <span>{{hero.name}}</span>
+                </a>
+            </ng-container>
+        </div>
+    </div>
+    <div class="block">
+        <header class="block__header">
+            <h4>Creators</h4>
+        </header>
+        <div class="block__content">
+            <ng-container *ngIf="comic?.creators?.items.length !== 0; else empty">
+                <div class="creator"
+                     *ngFor="let creator of comic?.creators.items">
+                    <span>{{creator.name}}</span>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #empty>
+    <span class="empty">nothing to see here :((</span>
+</ng-template>

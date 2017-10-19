@@ -1,0 +1,39 @@
+<h3 class="hero-title">
+    {{hero?.name}}
+    <i class="icon icon_fire favourite" (click)="toggleFavourite()" [ngClass]="isFavourite ? 'favourited' : 'unfavourited'"></i>
+</h3>
+<div class="hero-content">
+    <div class="hero-cover">
+        <picture class="hero__picture" *ngIf="hero?.thumbnail">
+            <source [srcset]="hero?.thumbnail?.path + '/portrait_uncanny.' + hero?.thumbnail?.extension" media="(min-width: 768px)">
+            <source [srcset]="hero?.thumbnail?.path + '/portrait_xlarge.' + hero?.thumbnail?.extension" media="(min-width: 425px)">
+            <img class="image" [src]="hero?.thumbnail?.path + '.' + hero?.thumbnail?.extension" [alt]="hero?.name">
+        </picture>
+    </div>
+    <ng-container *ngIf="hero?.description; else empty">
+        <p class="hero-description">{{hero?.description}}</p>
+    </ng-container>
+</div>
+<div class="hero-details">
+    <div class="block">
+        <header class="block__header">
+            <h4>Comics</h4>
+        </header>
+        <div class="block__content">
+            <ng-container *ngIf="comics?.length !== 0; else empty">
+                <a class="comic__link" *ngFor="let comic of comics" (click)="selectComic(comic)">
+                    <picture class="comic__picture" *ngIf="comic?.thumbnail">
+                        <source [srcset]="comic?.thumbnail?.path + '/portrait_medium.' + comic?.thumbnail?.extension" media="(min-width: 768px)">
+                        <source [srcset]="comic?.thumbnail?.path + '/portrait_medium.' + comic?.thumbnail?.extension" media="(min-width: 100px)">
+                        <img class="image" [src]="comic?.thumbnail?.path + '.' + comic?.thumbnail?.extension" [alt]="comic?.title">
+                    </picture>
+                    <span>{{comic.title}}</span>
+                </a>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #empty>
+    <span class="empty">nothing to see here :((</span>
+</ng-template>

@@ -1,0 +1,39 @@
+@import '../../../styles/variables';
+
+.home-menu {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  font-size: 2rem;
+  width: 100%;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+.home-menu::-webkit-scrollbar {
+  height: .5rem;
+  background-color: #F5F5F5;
+}
+
+.home-menu::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+  background-color: $c-dark_gray;
+}
+
+.home-menu_item {
+  display: inline-block;
+  border-bottom: $c-dark_red .4rem solid;
+  padding: .6rem 1rem;
+  margin-right: .5rem;
+  white-space: nowrap;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.active {
+  border-bottom: $c-bright_red .4rem solid;
+}

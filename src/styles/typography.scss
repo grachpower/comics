@@ -1,0 +1,24 @@
+@import 'colors';
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $c-white;
+
+  &:hover, &:focus {
+    color: $c-white;
+    outline: none;
+  }
+}
+
+p {
+  margin-bottom: 1.5rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style: none;
+}

@@ -1,0 +1,49 @@
+@import '../../../../../../styles/variables';
+
+.list {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__item {
+  width: 23%;
+  margin-bottom: 3rem;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.about {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.about__link {
+  cursor: pointer;
+
+  &:hover {
+    color: $c-bright_red;
+  }
+
+  &:focus {
+    color: $c-bright_red;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .list__item {
+    width: 23%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .list__item {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .list__item {
+    width: 45%;
+  }
+}

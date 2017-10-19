@@ -1,0 +1,30 @@
+<form [formGroup]="form" class="search-form">
+    <app-search placeholder="World war and etc." formControlName="search"></app-search>
+    <button class="search_button" (click)="findComics()">
+        <i class="icon icon_search"></i>
+    </button>
+</form>
+<ul class="comic-list">
+    <ng-container *ngIf="comics && comics?.length !== 0; else empty">
+        <li class="comic__item comic__about__link" *ngFor="let comic of comics" (click)="selectComic(comic)">
+            <div class="comic__preview">
+                <picture class="comic__picture" *ngIf="comic?.thumbnail">
+                    <source [srcset]="comic?.thumbnail?.path + '/portrait_uncanny.' + comic?.thumbnail?.extension" media="(min-width: 768px)">
+                    <source [srcset]="comic?.thumbnail?.path + '/portrait_xlarge.' + comic?.thumbnail?.extension" media="(min-width: 425px)">
+                    <source [srcset]="comic?.thumbnail?.path + '/portrait_medium.' + comic?.thumbnail?.extension" media="(min-width: 100px)">
+                    <img class="image" [src]="comic?.thumbnail?.path + '.' + comic?.thumbnail?.extension" [alt]="comic?.title">
+                </picture>
+            </div>
+            <p class="comic__about">
+                <span>{{comic?.title}}</span>
+            </p>
+        </li>
+    </ng-container>
+</ul>
+<div class="list__footer">
+    <button title="load more" class="next-button" (click)="loadNext()"></button>
+</div>
+
+<ng-template #empty>
+    <h2>Sorry, no comics found :(</h2>
+</ng-template>

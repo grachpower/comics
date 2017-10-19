@@ -1,0 +1,185 @@
+@import 'fonts';
+
+.icon {
+  position: relative;
+  &:before {
+    font: normal 16px $f-icon-font;
+    vertical-align: middle;
+  }
+  &_heart {
+    font-family: Arial;
+    &:before {
+      content: '\u2665';
+    }
+  }
+  &_bell {
+    &:before {
+      content: '\E7F4';
+    }
+  }
+  &_fire {
+    &:before {
+      content: '\E80E';
+    }
+  }
+  &_timer {
+    &:before {
+      content: '\E858';
+    }
+  }
+  &_search {
+    &:before {
+      content: '\E8B6';
+    }
+  }
+  &_add {
+    &:before {
+      content: '\E901';
+    }
+  }
+  &_close_fill {
+    &:before {
+      content: '\E5C9';
+    }
+  }
+  &_down-arr {
+    &:before {
+      content: '\E313';
+    }
+  }
+  &_lock {
+    &:before {
+      content: '\E897';
+    }
+  }
+  &_close {
+    &:before {
+      content: '\E5CD';
+    }
+  }
+  &_marker {
+    &:before {
+      content: '\E905';
+    }
+  }
+  &_dial {
+    &:before {
+      content: '\E0BC';
+    }
+  }
+  &_double-arr {
+    &:before {
+      content: '\E5D7';
+    }
+  }
+  &_burger {
+    &:before {
+      content: '\E5D2';
+    }
+  }
+  &_reminder {
+    &:before {
+      content: '\E904';
+    }
+  }
+  &_left-arr {
+    &:before {
+      content: '\E314';
+    }
+  }
+  &_stat {
+    &:before {
+      content: '\E01D';
+    }
+  }
+  &_calendar {
+    &:before {
+      content: '\E878';
+    }
+  }
+  &_radio {
+    &:before {
+      content: '\E836';
+    }
+  }
+  &_radio_chk {
+    &:before {
+      content: '\E837';
+    }
+  }
+  &_clock {
+    &:before {
+      content: '\E192';
+    }
+  }
+  &_exit {
+    &:before {
+      content: '\E879';
+    }
+  }
+  &_close-tab {
+    &:before {
+      content: '\E888';
+    }
+  }
+  &_tune {
+    &:before {
+      content: '\E0B0';
+    }
+  }
+  &_swap {
+    &:before {
+      content: '\E906';
+    }
+  }
+  &_eye {
+    &:before {
+      content: '\E908';
+    }
+  }
+  &_eye-hide {
+    &:before {
+      content: '\E907';
+    }
+  }
+  &_info {
+    &:before {
+      content: '\E90b';
+    }
+  }
+  &_info-fill {
+    &:before {
+      content: '\E90a';
+    }
+  }
+  &_double-check {
+    &:before {
+      content: '\E90E';
+    }
+  }
+  &_failed {
+    &:before {
+      content: '\E90C';
+    }
+  }
+  &_sent {
+    &:before {
+      content: '\E90F';
+    }
+  }
+  &_complete {
+    &:before {
+      content: '\E920';
+    }
+  }
+
+  &_warning {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    transform: rotate(180deg);
+    &:before {
+      content: '\E90a';
+    }
+  }
+}

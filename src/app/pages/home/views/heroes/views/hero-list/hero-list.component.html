@@ -1,0 +1,30 @@
+<form [formGroup]="form" class="search-form">
+    <app-search placeholder="Spider Man and etc." formControlName="search"></app-search>
+    <button class="search_button" (click)="findHeroes()">
+        <i class="icon icon_search"></i>
+    </button>
+</form>
+<ul class="hero-list">
+    <ng-container *ngIf="heroes && heroes?.length !== 0; else empty">
+        <li class="hero__item hero__about__link" *ngFor="let hero of heroes" (click)="selectHero(hero)">
+            <div class="hero__preview">
+                <picture class="hero__picture" *ngIf="hero?.thumbnail">
+                    <source [srcset]="hero?.thumbnail?.path + '/standard_fantastic.' + hero?.thumbnail?.extension" media="(min-width: 768px)">
+                    <source [srcset]="hero?.thumbnail?.path + '/standard_xlarge.' + hero?.thumbnail?.extension" media="(min-width: 425px)">
+                    <source [srcset]="hero?.thumbnail?.path + '/standard_medium.' + hero?.thumbnail?.extension" media="(min-width: 100px)">
+                    <img class="image" [src]="hero?.thumbnail?.path + '.' + hero?.thumbnail?.extension" [alt]="hero?.name">
+                </picture>
+            </div>
+            <p class="hero__about">
+                <span>{{hero?.name}}</span>
+            </p>
+        </li>
+    </ng-container>
+</ul>
+<div class="list__footer">
+    <button title="load more" class="next-button" (click)="loadNext()"></button>
+</div>
+
+<ng-template #empty>
+    <h2>Sorry, no comics found :(</h2>
+</ng-template>

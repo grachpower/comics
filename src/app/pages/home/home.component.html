@@ -1,0 +1,9 @@
+<div class="home-menu">
+    <a class="home-menu_item" *ngFor="let tab of tabService.availableTabs"
+       [routerLink]="tab.route" [queryParams]="tab.queryParams" [routerLinkActiveOptions]="{exact: true}"
+       routerLinkActive="active" (click)="tabService.updateCurrentTab(tab)">
+        {{tab.name}}
+        <span *ngIf="tab.isDefault" class="icon icon_close-tab" (click)="closeTab(tab); false"></span>
+    </a>
+</div>
+<router-outlet></router-outlet>

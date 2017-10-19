@@ -1,0 +1,45 @@
+@import '../styles/variables';
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  background-color: $c-black;
+  box-sizing: border-box;
+  padding-bottom: 4rem;
+}
+
+.header {
+  padding: 2rem 0;
+  border-bottom: $c-light_gray 2px solid;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo__img {
+  max-width: 100%;
+  height: auto;
+  max-height: 5rem;
+}
+
+.main {
+  color: $c-light_gray;
+}
+
+.footer {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: $c-dark_red 2px solid;
+  padding: 1rem;
+  color: $c-dark_gray;
+  font-size: 1.2rem;
+}
+
+.container-inner {
+  display: flex;
+  justify-content: space-between;
+}
