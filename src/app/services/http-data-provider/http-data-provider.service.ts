@@ -9,7 +9,7 @@ import { HttpRequestOptions } from 'src/app/services/http-data-provider/http-req
 import { CONTENT_TYPE } from '../../../../config/content-type.constants';
 import { ErrorHandlerService } from '../error-handler/error-handler.service';
 import { PRIVATE_KEY, PUBLIC_KEY } from '../../../../config/api-keys.config';
-import { DictionaryInterface } from '../../interfaces/dictionary.interface';
+import { DictionaryInterface } from '../../core/interfaces/dictionary.interface';
 
 export function getHashValue(timestamp: string) {
     return Md5.hashStr(`${timestamp}${PRIVATE_KEY}${PUBLIC_KEY}`.toString());

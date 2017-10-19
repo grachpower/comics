@@ -1,4 +1,4 @@
-import { Model } from '../../../../../decorators/model.decorator';
+import { Model } from '../../../../../core/decorators/model.decorator';
 
 @Model()
 export class HeroModel {

@@ -1,5 +1,5 @@
-import { Model } from '../../../../../decorators/model.decorator';
-import { DictionaryInterface } from '../../../../../interfaces/dictionary.interface';
+import { Model } from '../../../../../core/decorators/model.decorator';
+import { DictionaryInterface } from '../../../../../core/interfaces/dictionary.interface';
 
 @Model()
 export class ComicModel {

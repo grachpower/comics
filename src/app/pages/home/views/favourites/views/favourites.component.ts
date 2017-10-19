@@ -5,7 +5,7 @@ import { ComicModel } from '../../comics/models/comic.model';
 import { FavouritesService } from '../../../../../services/favourites-service/favourites.service';
 import { ComicsRepository } from '../../../../../services/comics-repository/comics.repository';
 import { HeroesRepository } from '../../../../../services/heroes-repository/heroes.reporitory';
-import { DictionaryInterface } from '../../../../../interfaces/dictionary.interface';
+import { DictionaryInterface } from '../../../../../core/interfaces/dictionary.interface';
 import { FAVOURITES_CONFIG } from '../config/favourites.config';
 import { NavigationTabService } from '../../../services/navigation-tab-service/navigation-tab.service';
 

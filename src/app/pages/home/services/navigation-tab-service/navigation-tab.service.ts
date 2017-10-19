@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { DictionaryInterface } from '../../../../interfaces/dictionary.interface';
+import { DictionaryInterface } from '../../../../core/interfaces/dictionary.interface';
 import { NavigationTabModel } from '../../models/navigation-tab.model';
 import { NAVIGATION_TABS } from '../../config/navigation-tab.config';
 
