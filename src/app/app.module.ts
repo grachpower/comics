@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NoContentComponent } from './no-content/no-content.component';
 
 import '../styles/styles.scss';
-import './util/URI';
+import './core/util/URI';
 
 import { GlobalServicesModule } from './services/global-services.module';
 import { SharedModule } from './shared/shared.module';
