@@ -1,6 +1,12 @@
 # Install
 ```bash
-# install the repo with npm
+# clone
+git clone https://github.com/grachpower/comics.git
+
+#move to folder
+cd comics
+
+# install dependencies
 npm install
 
 # start the server
